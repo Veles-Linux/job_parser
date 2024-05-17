@@ -1,4 +1,4 @@
-from utils.utils import user_choice_hh
+from utils.utils import user_choice_hh, user_choice_sj
 
 
 def main():
@@ -7,7 +7,8 @@ def main():
           'Эта программа поможет Вам в поиске вакансий на сайтах: HeadHunter и SuperJob. \n'
           'Введите цифру от 1 до 2: \n'
           '1 - HeadHunter \n'
-          '2 - Закрыть программу. \n')
+          '2 - SuperJob \n'
+          '3 - Закрыть программу. \n')
 
     while True:
         user_choice_platform = input()
@@ -17,6 +18,10 @@ def main():
             break
 
         elif user_choice_platform == '2':
+            print('SuperJob')
+            user_choice_sj()
+
+        elif user_choice_platform == '3':
             print('До свидания')
             break
 
