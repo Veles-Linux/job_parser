@@ -74,6 +74,10 @@ class Vacancy:
             vacancy_dict['url']
         )
 
+    @classmethod
+    def from_list_dict(cls, i):
+        pass
+
 
 class Vacancies:
     """Обработка списка вакансий"""
