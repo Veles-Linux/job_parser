@@ -4,6 +4,7 @@ from utils.api_sj import SuperJobAPI
 
 
 def user_choice_hh():
+    """Функция для фильтра вакансий HH.ru"""
     keyword = input('Напишите название профессии: \n')
     hh_api = HeadHunterAPI()
     print('Сколько вывести страниц? \n')
@@ -25,6 +26,7 @@ def user_choice_hh():
 
 
 def user_choice_sj():
+    """Функция для фильтра вакансий SuperJob"""
     keyword = input('Напишите название профессии: \n')
     superjob_api = SuperJobAPI()
     print('Сколько вывести страниц? \n')

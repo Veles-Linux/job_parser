@@ -86,14 +86,17 @@ class Vacancies:
         self._all_vacancies = []
 
     def add_vacancies(self, new_vacancies):
+        """Функция добавления вакансии"""
         self._all_vacancies += new_vacancies
 
     def delete_vacancies(self, old_vacancies):
+        """Функция удаления вакансий"""
         for i in old_vacancies:
-            self.all_vacancies.remove(i)
+            self._all_vacancies.remove(i)
 
     def sort_vacancies_by_salary(self):
-        self.all_vacancies.sort(reverse=True)
+        """Функция сортировки вакансий"""
+        self._all_vacancies.sort(reverse=True)
 
     @property
     def all_vacancies(self):
