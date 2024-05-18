@@ -21,6 +21,6 @@ class JSONSaver(Vacancies, SaverJSON):
         """
         with open('vacancies.json', 'r', encoding='UTF-8') as file:
             list_dict = json.load(file)
-            self.__all_vacancies = []
+            self.all_vacancies = []
             for i in list_dict:
                 self.all_vacancies.append(Vacancy.from_list_dict(i))
