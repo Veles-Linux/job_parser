@@ -104,6 +104,6 @@ class Vacancies:
 
     def to_list_dict(self):
         total = []
-        for i in self.all_vacancies:
+        for i in self._all_vacancies:
             total.append(i.to_dict())
         return total
