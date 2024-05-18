@@ -12,7 +12,8 @@ class JSONSaver(Vacancies, SaverJSON):
         """
         Запись файла
         """
-        with open(input('Назовите файл: ') + '.json', 'w', encoding='utf-8') as file:
+        name_file = input('Назовите файл: ') + '.json'
+        with open(name_file, 'w', encoding='utf-8') as file:
             json.dump(self.to_list_dict(), file, indent=4, ensure_ascii=False)
 
     def file_reader(self):
