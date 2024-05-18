@@ -3,13 +3,13 @@ class Vacancy:
     Информация о вакансии
     """
 
-    def __init__(self, vacancy_title, town, salary_from, salary_to, employment, url):
+    def __init__(self, vacancy_title, town, salary_from, salary_to, employment, __url):
         self.vacancy_title: str = vacancy_title
         self.town: str = town
         self.salary_from: int = salary_from
         self.salary_to: int = salary_to
         self.employment: str = employment
-        self.url: str = url
+        self.url: str = __url
 
     def __str__(self):
         return f'Название вакансии: {self.vacancy_title}\n' \
@@ -83,24 +83,24 @@ class Vacancies:
     """Обработка списка вакансий"""
 
     def __init__(self):
-        self.__all_vacancies = []
+        self._all_vacancies = []
 
     def add_vacancies(self, new_vacancies):
-        self.__all_vacancies += new_vacancies
+        self._all_vacancies += new_vacancies
 
     def delete_vacancies(self, old_vacancies):
         for i in old_vacancies:
-            self.__all_vacancies.remove(i)
+            self.all_vacancies.remove(i)
 
     def sort_vacancies_by_salary(self):
-        self.__all_vacancies.sort(reverse=True)
+        self.all_vacancies.sort(reverse=True)
 
     @property
     def all_vacancies(self):
-        return self.__all_vacancies
+        return self._all_vacancies
 
     def to_list_dict(self):
         total = []
-        for i in self.__all_vacancies:
+        for i in self.all_vacancies:
             total.append(i.to_dict())
         return total
