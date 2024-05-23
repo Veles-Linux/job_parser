@@ -17,7 +17,8 @@ class Vacancy:
                f'Зарплата от: {self.salary_from}\n' \
                f'Зарплата до: {self.salary_to}\n' \
                f'Тип занятости: {self.employment}\n' \
-               f'Ссылка на вакансию: {self.url}\n'
+               f'Ссылка на вакансию: {self.url}\n' \
+
 
     def __eq__(self, other):
         if not isinstance(other, Vacancy):
