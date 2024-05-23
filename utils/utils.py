@@ -1,6 +1,7 @@
 from utils.api_hh import HeadHunterAPI
 from utils.saveJSON import JSONSaver
 from utils.api_sj import SuperJobAPI
+import json
 
 
 def user_choice_hh():
@@ -38,10 +39,22 @@ def user_choice_sj():
     print('Записать, отсортированные по зарплате данные в JSON файл? \n')
     user_answer = input('Да\Нет \n').lower()
     if user_answer not in ['да']:
-        print('Спасибо за использование программы!')
+        print('Завершено')
     else:
         jsonfile_sj = JSONSaver()
         jsonfile_sj.add_vacancies(from_sj)
         jsonfile_sj.sort_vacancies_by_salary()
         jsonfile_sj.file_writer()
         return jsonfile_sj
+
+
+def del_vacancy():
+    """Функция для удаления вакансии по индексу"""
+    file = open("Вакансии.json", 'r', encoding='UTF-8')
+    file = json.load(file)
+    del file[int(input())]
+    file_new = open("Вакансии.json", "w", encoding='UTF-8')
+    data = file
+    json.dump(data, file_new, indent=4, ensure_ascii=False)
+
+    return file
